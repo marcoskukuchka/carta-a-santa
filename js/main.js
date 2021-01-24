@@ -52,9 +52,13 @@ function validarFormulario(event) {
     const errores = {
         nombre: errorNombre,
         ciudad: errorCiudad,
-        descripcionRegalo: errorDescripcionRegalo
+        'descripcion-regalo': errorDescripcionRegalo
     };
-    console.log(errores);
+    /*  console.log(errores);
+
+     console.log(Object.keys(errores));
+     console.log(Object.values(errores)); */
+
     menejarErrores(errores);
 
     event.preventDefault();
@@ -62,9 +66,12 @@ function validarFormulario(event) {
 }
 
 function menejarErrores(errores) {
-    errorNombre = errores.nombre;
+
+    /* errorNombre = errores.nombre;
     errorCiudad = errores.ciudad;
     errorDescripcionRegalo = errores.descripcionRegalo;
+
+
 
     if (errorNombre) {
         $form.nombre.className = "error";
@@ -80,7 +87,25 @@ function menejarErrores(errores) {
         $form["descripcion-regalo"].className = "error"
     } else {
         $form["descripcion-regalo"].className = ""
-    }
+    } */
+
+
+    //refactorizado
+
+    const keys = Object.keys(errores);
+
+    keys.forEach(function(key) {
+        const error = errores[key];
+
+        if (error) {
+            $form[key].className = "error";
+        } else {
+            $form[key].className = "";
+        }
+    });
+
+
+
 
 }
 
