@@ -1,27 +1,3 @@
-
-
-
-
-/* const nombre = $form.nombre.value;
-const ciudad = $form.ciudad.value;
-const comportamiento = $form.comportamiento.value;
-const descripcionRegalo = $form['descripcion-regalo'].value; */
-
-/* const nombre = document.querySelector('#nombre').value; //DOM por id
-const ciudad = document.querySelector('select').value;  //DOM por etiqueta
-const comportamiento = document.querySelector('#carta-a-santa').comportamiento.value //DOM selecciono el formulario por id y luego busca el atributo name=comportamiento
-otra forma es const nombre = document.querySelector('[name=nombre]') */
-
-
-
-/* console.log(nombre);
-console.log(ciudad);
-console.log(comportamiento);
-console.log(descripcionRegalo); */
-
-
-
-
 function validarNombre(nombre) {
     if (nombre.length === 0) {
         return 'Este campo debe tener al menos 1 caracter';
@@ -31,7 +7,7 @@ function validarNombre(nombre) {
         return 'Este campo debe tener menos de 50 caracteres';
     }
 
-    if (!/^[a-z]+$/i.test(nombre)) {  // i = incase sensitive (no importan mayusculas o minusculas)
+    if (!/^[a-z]+$/i.test(nombre)) { // i = incase sensitive (no importan mayusculas o minusculas)
         return 'el campo nombre solo acepta letras'
     }
     return '';
@@ -41,7 +17,7 @@ function validarNombre(nombre) {
 function validarCiudad(ciudad) {
     if (ciudad.length === 0) {
         return 'Este campo debe tener una ciudad seleccionada';
-        
+
     }
     return '';
 }
@@ -61,10 +37,10 @@ function validarDescripcionRegalo(descripcionRegalo) {
     return '';
 }
 
-function validarFormulario(event){
-    
+function validarFormulario(event) {
+
     const $form = document.querySelector("#carta-a-santa");
-    
+
     const nombre = $form.nombre.value;
     const ciudad = $form.ciudad.value;
     const descripcionRegalo = $form["descripcion-regalo"].value;
@@ -85,7 +61,7 @@ function validarFormulario(event){
 
 }
 
-function menejarErrores(errores){
+function menejarErrores(errores) {
     errorNombre = errores.nombre;
     errorCiudad = errores.ciudad;
     errorDescripcionRegalo = errores.descripcionRegalo;

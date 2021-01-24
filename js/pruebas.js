@@ -12,7 +12,7 @@ function probarValidarNombre() {
     console.assert(validarNombre('marcos') === '', 'El caso fallo con un nombre valido');
 
     console.assert(validarNombre('123456') === 'el campo nombre acepta solo letras',
-    'validar nombre no valido que el campo tenga solo letras');
+        'validar nombre no valido que el campo tenga solo letras');
 }
 
 function probarValidarCiudad() {
@@ -23,7 +23,7 @@ function probarValidarCiudad() {
     console.assert(validarCiudad('') === 'este campo no puede quedar vacio',
         'validar ciudad no mostro un error cuando la ciudad esta vacia');
 
-    
+
 }
 
 function probarValidarDescripcionRegalo() {
@@ -33,10 +33,6 @@ function probarValidarDescripcionRegalo() {
 }
 
 
-
-probarValidarNombre();
+/* probarValidarNombre();
 probarValidarCiudad()
-probarValidarDescripcionRegalo();
-
-
-
+probarValidarDescripcionRegalo(); */
