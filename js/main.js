@@ -56,7 +56,14 @@ function validarFormulario(event) {
     };
 
 
-    menejarErrores(errores);
+    const hayErrores = menejarErrores(errores) === 0;
+
+    if (hayErrores) {
+
+        document.querySelector('#exito').className = '';
+        document.querySelector('#carta-a-santa').className = 'oculto';
+
+    }
 
     event.preventDefault();
 
@@ -66,11 +73,13 @@ function menejarErrores(errores) {
 
     const keys = Object.keys(errores);
     const $errores = document.querySelector('#errores');
+    let contadorErrores = 0; //contador de errores
 
     keys.forEach(function(key) {
         const error = errores[key];
 
         if (error) {
+            contadorErrores++;
             $form[key].className = "error";
 
             //agregar errores a la pagina
@@ -81,13 +90,13 @@ function menejarErrores(errores) {
         } else {
             $form[key].className = "";
         }
+
     });
 
-
+    return contadorErrores;
 
 
 }
-
 
 
 const $form = document.querySelector('#carta-a-santa');
