@@ -76,7 +76,7 @@ function menejarErrores(errores) {
             //agregar errores a la pagina
             const $error = document.createElement('li'); //crea elemento
             $error.innerText = error; // asigna contenido 
-            $errores.appendChild($error); // inserta el elemento (nodo)
+            $errores.appendChild($error); // inserta el elemento (nodo) al final del cuerpo del documento
 
         } else {
             $form[key].className = "";
