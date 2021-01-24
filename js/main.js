@@ -54,10 +54,7 @@ function validarFormulario(event) {
         ciudad: errorCiudad,
         'descripcion-regalo': errorDescripcionRegalo
     };
-    /*  console.log(errores);
 
-     console.log(Object.keys(errores));
-     console.log(Object.values(errores)); */
 
     menejarErrores(errores);
 
@@ -67,38 +64,20 @@ function validarFormulario(event) {
 
 function menejarErrores(errores) {
 
-    /* errorNombre = errores.nombre;
-    errorCiudad = errores.ciudad;
-    errorDescripcionRegalo = errores.descripcionRegalo;
-
-
-
-    if (errorNombre) {
-        $form.nombre.className = "error";
-    } else {
-        $form.nombre.className = "";
-    }
-    if (errorCiudad) {
-        $form.ciudad.className = "error"
-    } else {
-        $form.ciudad.className = ""
-    }
-    if (errorDescripcionRegalo) {
-        $form["descripcion-regalo"].className = "error"
-    } else {
-        $form["descripcion-regalo"].className = ""
-    } */
-
-
-    //refactorizado
-
     const keys = Object.keys(errores);
+    const $errores = document.querySelector('#errores');
 
     keys.forEach(function(key) {
         const error = errores[key];
 
         if (error) {
             $form[key].className = "error";
+
+            //agregar errores a la pagina
+            const $error = document.createElement('li'); //crea elemento
+            $error.innerText = error; // asigna contenido 
+            $errores.appendChild($error); // inserta el elemento (nodo)
+
         } else {
             $form[key].className = "";
         }
